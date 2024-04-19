@@ -44,4 +44,24 @@ Console.WriteLine(fruits.Last());
 // 10 - Skip
 foreach (var fruit in fruits
     .Skip(3))
-    Console.WriteLine(fruit);
+Console.WriteLine(fruit);
+
+//-----------------------------------------------
+
+// Número da página desejada e tamanho da página
+int pageNumber = 2; // Página 2
+int pageSize = 10; // 10 itens por página
+
+// Calcular o índice inicial a ser pulado
+int startIndex = (pageNumber - 1) * pageSize;
+
+// Consulta LINQ para a página desejada
+var pagedItems = fruits.Skip(startIndex).Take(pageSize);
+
+// Exibir os itens da página
+foreach (var item in pagedItems)
+{
+    Console.WriteLine(item);
+}
+
+
